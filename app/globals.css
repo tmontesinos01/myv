@@ -46,10 +46,10 @@ h3 { color:var(--navy); font-size:18px; letter-spacing:-.02em; margin-bottom:8px
 .trust-bar strong { color:var(--navy); font-size:13px; font-weight:750 }
 .about-image { min-height:420px; background:linear-gradient(145deg,#E9F5FC,#F8EFE6) }
 .treatment-card,.professional-card { display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:white; box-shadow:0 8px 24px rgba(18,59,120,.04) }
-.treatment-card { min-height:390px; transition:transform .2s ease, box-shadow .2s ease }
+.treatment-card { transition:transform .2s ease, box-shadow .2s ease }
 .treatment-card:hover { transform:translateY(-4px); box-shadow:0 16px 30px rgba(18,59,120,.1) }
 .treatment-card p,.feature p,.professional-card p,.quote,.site-footer p { color:var(--muted); line-height:1.65; font-size:14px }
-.treatment-image { min-height:150px; border-radius:0; border-bottom:1px solid var(--line) }
+.treatment-image { position:relative; aspect-ratio:8 / 5; flex-shrink:0; overflow:hidden; border-bottom:1px solid var(--line) }
 .tone-blue { background:#DDEAFF }.tone-sky { background:#DDF3F6 }.tone-sand { background:#FCEAD8 }.tone-navy { background:#DDE5F2 }
 .feature-icon { display:grid; place-items:center; width:46px; height:46px; margin-bottom:20px; border-radius:14px; background:#E8F1FF; color:var(--blue) }
 .feature-icon svg { width:21px }

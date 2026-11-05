@@ -71,7 +71,7 @@ export const testimonials: Testimonial[] = []
 
 export const faqs: FaqItem[] = [
   { question: '¿Qué puedo esperar en la primera consulta?', answer: 'Vamos a conocer tu motivo de consulta, revisar tu salud bucal y conversar sobre las alternativas posibles. La primera charla es un espacio para que puedas preguntar todo lo que necesites.' },
-  { question: '¿Trabajan con obras sociales?', answer: 'Consultanos por WhatsApp para confirmar las obras sociales y prepagas disponibles.' },
+  // { question: '¿Trabajan con obras sociales?', answer: 'Consultanos por WhatsApp para confirmar las obras sociales y prepagas disponibles.' },
   { question: '¿Atienden urgencias?', answer: 'Escribinos para contarnos qué necesitás y consultar la disponibilidad del centro.' },
-  { question: '¿Qué formas de pago aceptan?', answer: 'Consultanos por los medios de pago habilitados.' },
+  { question: '¿Qué formas de pago aceptan?', answer: 'Aceptamos todos los medios de pago, para que elijas el que te resulte más cómodo.' },
 ]

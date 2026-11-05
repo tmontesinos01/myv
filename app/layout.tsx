@@ -9,6 +9,15 @@ const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope', displa
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
+  icons: {
+    icon: [
+      { url: '/favicon.ico?v=5', sizes: '16x16 32x32 48x48', type: 'image/x-icon' },
+      { url: '/favicon.png?v=5', sizes: '96x96', type: 'image/png', media: '(prefers-color-scheme: light)' },
+      { url: '/favicon-dark.png?v=5', sizes: '96x96', type: 'image/png', media: '(prefers-color-scheme: dark)' },
+    ],
+    shortcut: '/favicon.ico?v=5',
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,

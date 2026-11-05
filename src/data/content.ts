@@ -1,5 +1,5 @@
-export type Treatment = { name: string; description: string; tone: string }
-export type Professional = { name: string; specialty: string; license?: string }
+export type Treatment = { name: string; description: string; tone: 'blue' | 'sky' | 'sand' | 'navy' }
+export type Professional = { id: string; name: string; specialty: string; license?: string }
 export type Testimonial = { quote: string; author: string }
 export type FaqItem = { question: string; answer: string }
 
@@ -11,8 +11,8 @@ export const treatments: Treatment[] = [
 ]
 
 export const professionals: Professional[] = [
-  { name: '[PENDIENTE] Nombre profesional', specialty: '[PENDIENTE] Especialidad', license: '[PENDIENTE] Matrícula' },
-  { name: '[PENDIENTE] Nombre profesional', specialty: '[PENDIENTE] Especialidad' },
+  { id: 'professional-1', name: '[PENDIENTE] Nombre profesional', specialty: '[PENDIENTE] Especialidad', license: '[PENDIENTE] Matrícula' },
+  { id: 'professional-2', name: '[PENDIENTE] Nombre profesional', specialty: '[PENDIENTE] Especialidad' },
 ]
 
 export const testimonials: Testimonial[] = []

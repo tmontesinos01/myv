@@ -5,10 +5,47 @@ import { siteConfig } from '@/src/config/site.config'
 import './globals.css'
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' })
-export const metadata: Metadata = { title: siteConfig.name, description: siteConfig.description, generator: 'v0.app', openGraph: { title: siteConfig.name, description: siteConfig.description, type: 'website' } }
-export const viewport: Viewport = { colorScheme: 'light', themeColor: '#155EEF', width: 'device-width', initialScale: 1, userScalable: true }
+
+export const metadata: Metadata = {
+  title: siteConfig.name,
+  description: siteConfig.description,
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    type: 'website',
+  },
+}
+
+export const viewport: Viewport = {
+  colorScheme: 'light',
+  themeColor: '#155EEF',
+  width: 'device-width',
+  initialScale: 1,
+  userScalable: true,
+}
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const jsonLd = { '@context': 'https://schema.org', '@type': 'Dentist', name: siteConfig.name, description: siteConfig.description, ...(siteConfig.address.includes('[PENDIENTE]') ? {} : { address: siteConfig.address }), ...(siteConfig.phone.includes('[PENDIENTE]') ? {} : { telephone: siteConfig.phone }) }
-  return <html lang="es"><body className={`${manrope.variable} antialiased`}>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Dentist',
+    name: siteConfig.name,
+    description: siteConfig.description,
+    ...(siteConfig.address.includes('[PENDIENTE]') ? {} : { address: siteConfig.address }),
+    ...(siteConfig.phone.includes('[PENDIENTE]') ? {} : { telephone: siteConfig.phone }),
+  }
+
+  return (
+    <html lang="es">
+      <body className={`${manrope.variable} antialiased`}>
+        {children}
+        {!siteConfig.name.includes('[PENDIENTE]') && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+          />
+        )}
+        {process.env.NODE_ENV === 'production' && <Analytics />}
+      </body>
+    </html>
+  )
 }

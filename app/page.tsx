@@ -1,35 +1,36 @@
-import { ArrowUpRight, CalendarDays, Check, Clock3, Heart, Mail, MapPin, MessageCircle, Phone, ShieldCheck, Sparkles } from 'lucide-react'
-import { FaqAccordion, MapReveal, MobileMenu, StickyWhatsApp } from '@/src/components/interactive'
-import { buildWhatsAppUrl, siteConfig } from '@/src/config/site.config'
-import { faqs, professionals, testimonials, treatments } from '@/src/data/content'
-
-const links = [
-  { href: '#nosotros', label: 'Nosotros' }, { href: '#tratamientos', label: 'Tratamientos' }, { href: '#profesionales', label: 'Profesionales' }, { href: '#preguntas', label: 'Preguntas frecuentes' }, { href: '#contacto', label: 'Contacto' },
-]
-const wa = (message: string) => buildWhatsAppUrl({ phone: siteConfig.whatsapp, message })
-const placeholder = '/placeholder.svg'
-
-function Placeholder({ label, className = '' }: { label: string; className?: string }) { return <div className={`placeholder ${className}`}><span>{label}</span></div> }
-function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: string; copy?: string }) { return <div className="section-heading"><p className="eyebrow">{eyebrow}</p><h2>{title}</h2>{copy && <p>{copy}</p>}</div> }
+import { AboutSection } from '@/src/components/home/about-section'
+import { AppointmentSection } from '@/src/components/home/appointment-section'
+import { ContactSection } from '@/src/components/home/contact-section'
+import { FaqSection } from '@/src/components/home/faq-section'
+import { FeaturesSection } from '@/src/components/home/features-section'
+import { HeroSection } from '@/src/components/home/hero-section'
+import { ProfessionalsSection } from '@/src/components/home/professionals-section'
+import { TestimonialsSection } from '@/src/components/home/testimonials-section'
+import { TreatmentsSection } from '@/src/components/home/treatments-section'
+import { TrustBar } from '@/src/components/home/trust-bar'
+import { SiteFooter } from '@/src/components/site-footer'
+import { SiteHeader } from '@/src/components/site-header'
+import { StickyWhatsApp } from '@/src/components/sticky-whatsapp'
 
 export default function Page() {
-  const cta = (_location: string, message = siteConfig.whatsappDefaultMessage) => ({ href: wa(message) })
-  return <>
-    <a className="skip-link" href="#contenido">Ir al contenido principal</a>
-    <header className="site-header"><div className="container flex h-20 items-center justify-between gap-6"><a href="#inicio" className="brand-mark">{siteConfig.shortName}</a><nav className="hidden items-center gap-6 text-sm font-semibold text-[#556579] md:flex" aria-label="Navegación principal">{links.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}</nav><a className="button-primary hidden shrink-0 md:flex" {...cta('navbar')}>WhatsApp <ArrowUpRight data-icon="inline-end" /></a><MobileMenu links={links} /></div></header>
-    <main id="contenido">
-      <section id="inicio" className="hero-section"><div className="container grid items-center gap-10 lg:grid-cols-[1.02fr_.98fr] lg:gap-16"><div className="max-w-2xl"><p className="eyebrow">CUIDAMOS TU SONRISA</p><h1>Tu sonrisa, acompañada con calidez y confianza.</h1><p className="hero-copy">Una primera orientación para que conozcas el centro, nuestros tratamientos y el camino para pedir tu próxima consulta.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><a className="button-primary" {...cta('hero')}>Pedí turno por WhatsApp <ArrowUpRight data-icon="inline-end" /></a><a className="button-secondary" href="#tratamientos">Ver tratamientos</a></div></div><Placeholder label="Foto principal — pendiente" className="hero-image" /></div></section>
-      <section className="trust-bar" aria-label="Información destacada"><div className="container grid gap-4 sm:grid-cols-3"><div><Clock3 /><span>Horarios</span><strong>{siteConfig.hours}</strong></div><div><MapPin /><span>Ubicación</span><strong>{siteConfig.address}</strong></div><div><ShieldCheck /><span>Obras sociales</span><strong>{siteConfig.insurance.join(', ')}</strong></div></div></section>
-      <section id="nosotros" className="section"><div className="container grid items-center gap-10 lg:grid-cols-2 lg:gap-20"><Placeholder label="Foto del centro — pendiente" className="about-image" /><div><SectionHeading eyebrow="SOBRE NOSOTROS" title="Un espacio pensado para que te sientas bien." copy="Somos un centro odontológico en construcción, con una mirada cercana y clara sobre cada consulta. Esta sección queda lista para sumar la historia, el equipo y la propuesta real del centro." /><a className="text-link" {...cta('about')}>Conocé más por WhatsApp <ArrowUpRight /></a></div></div></section>
-      <section id="tratamientos" className="section section-surface"><div className="container"><SectionHeading eyebrow="TRATAMIENTOS" title="Soluciones para cuidar tu salud bucal." copy="Conocé algunas de las áreas que podemos completar con información detallada y actualizada." /><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{treatments.map((item) => <article className="treatment-card" key={item.name}><Placeholder label="Imagen — pendiente" className={`treatment-image tone-${item.tone}`} /><div className="flex flex-1 flex-col p-5"><h3>{item.name}</h3><p>{item.description}</p><a className="text-link mt-auto pt-5" href={wa(`Hola, quisiera consultar por ${item.name}.`)} >Consultar por este tratamiento <ArrowUpRight /></a></div></article>)}</div></div></section>
-      <section className="section"><div className="container"><SectionHeading eyebrow="POR QUÉ ELEGIRNOS" title="Una atención que empieza por escucharte." /><div className="mt-10 grid gap-8 md:grid-cols-3">{[[Heart, 'Cercanía', 'Un trato humano, claro y atento en cada paso.'], [Sparkles, 'Claridad', 'Información simple para que puedas decidir con tranquilidad.'], [Check, 'Acompañamiento', 'Te orientamos para encontrar la consulta que necesitás.']].map(([Icon, title, copy]) => <div className="feature" key={title as string}><div className="feature-icon"><Icon /></div><h3>{title as string}</h3><p>{copy as string}</p></div>)}</div></div></section>
-      <section id="profesionales" className="section section-surface"><div className="container"><SectionHeading eyebrow="PROFESIONALES" title="El equipo que va a acompañarte." /><div className="mt-10 grid gap-5 sm:grid-cols-2">{professionals.map((person, i) => <article className="professional-card" key={`${person.name}-${i}`}><Placeholder label="Foto profesional — pendiente" className="professional-image" /><div><h3>{person.name}</h3><p>{person.specialty}</p>{person.license && <small>{person.license}</small>}</div></article>)}</div></div></section>
-      {testimonials.length > 0 && <section className="section"><div className="container"><SectionHeading eyebrow="TESTIMONIOS" title="Lo que dicen quienes nos eligen." /><div className="mt-10 grid gap-5 md:grid-cols-3">{testimonials.map((item) => <blockquote className="quote" key={item.author}>“{item.quote}”<cite>{item.author}</cite></blockquote>)}</div></div></section>}
-      <section id="preguntas" className="section"><div className="container grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:gap-20"><SectionHeading eyebrow="PREGUNTAS FRECUENTES" title="Antes de venir, resolvé tus dudas." copy="Si no encontrás lo que buscás, escribinos y te orientamos." /><FaqAccordion items={faqs} /></div></section>
-      <section className="cta-section"><div className="container flex flex-col items-start justify-between gap-7 md:flex-row md:items-center"><div><p className="eyebrow text-[#BFE1F5]">PEDÍ TU TURNO</p><h2>Tu próxima consulta empieza acá.</h2><p>Escribinos para consultar disponibilidad. El pedido no confirma un turno.</p></div><a className="button-light" {...cta('cta')}>Hablar por WhatsApp <MessageCircle data-icon="inline-end" /></a></div></section>
-      <section id="contacto" className="section"><div className="container grid gap-10 lg:grid-cols-2 lg:gap-20"><div><SectionHeading eyebrow="CONTACTO Y UBICACIÓN" title="Estamos para ayudarte." /><div className="contact-list"><p><MapPin />{siteConfig.address}, {siteConfig.city}</p><p><Phone />{siteConfig.phone}</p><p><MessageCircle />{siteConfig.whatsapp}</p><p><Mail />{siteConfig.email}</p><p><CalendarDays />{siteConfig.hours}</p></div><div className="mt-7 flex gap-3"><a className="social-button" href={siteConfig.social.instagram} aria-label="Instagram"><span aria-hidden="true">◎</span></a><a className="social-button" href={siteConfig.social.facebook} aria-label="Facebook"><span className="font-bold">f</span></a></div></div><MapReveal /></div></section>
-    </main>
-    <footer className="site-footer"><div className="container grid gap-8 py-10 md:grid-cols-[1.2fr_1fr_1fr]"><div><a href="#inicio" className="brand-mark">{siteConfig.shortName}</a><p className="mt-4 max-w-xs text-sm">Cuidamos tu sonrisa con una atención cercana y clara.</p></div><div><p className="footer-label">Navegación</p><nav className="flex flex-col gap-3 text-sm">{links.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}</nav></div><div><p className="footer-label">Contacto</p><p className="text-sm">{siteConfig.whatsapp}</p><p className="text-sm">{siteConfig.email}</p><a className="text-sm underline" href="#">Política de privacidad</a></div></div><div className="container border-t border-[#DCE7F2] py-5 text-xs text-[#556579]">© {new Date().getFullYear()} {siteConfig.name}. Todos los derechos reservados.</div></footer>
-    <StickyWhatsApp />
-  </>
+  return (
+    <>
+      <a className="skip-link" href="#contenido">Ir al contenido principal</a>
+      <SiteHeader />
+      <main id="contenido" tabIndex={-1}>
+        <HeroSection />
+        <TrustBar />
+        <AboutSection />
+        <TreatmentsSection />
+        <FeaturesSection />
+        <ProfessionalsSection />
+        <TestimonialsSection />
+        <FaqSection />
+        <AppointmentSection />
+        <ContactSection />
+      </main>
+      <SiteFooter />
+      <StickyWhatsApp />
+    </>
+  )
 }

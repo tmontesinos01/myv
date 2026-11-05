@@ -1,25 +1,17 @@
 export const siteConfig = {
-  name: '[PENDIENTE] Nombre del centro',
-  shortName: '[PENDIENTE] Centro odontológico',
+  name: 'Centro odontológico MYV',
+  shortName: 'MYV',
   description: 'Atención odontológica cercana y profesional para cuidar tu sonrisa.',
-  whatsapp: '[PENDIENTE] WhatsApp',
-  phone: '[PENDIENTE] Teléfono',
-  email: '[PENDIENTE] Email',
-  address: '[PENDIENTE] Dirección',
-  city: '[PENDIENTE] Ciudad',
-  hours: '[PENDIENTE] Días y horarios de atención',
-  social: { instagram: '[PENDIENTE] Instagram', facebook: '[PENDIENTE] Facebook' },
+  whatsapp: '+5491121891548',
+  phone: '+5491121891548',
+  email: 'info@myv.com',
+  address: 'Av. Dr. Ricardo Balbín 6910, B1722 Merlo, Provincia de Buenos Aires, Argentina',
+  city: 'Merlo',
+  hours: 'Lunes a Viernes: 9:00 - 18:00',
+  social: { instagram: 'https://www.instagram.com/estetica.myv/', facebook: 'https://www.facebook.com/estetica.myv/' },
   insurance: ['[PENDIENTE] Obras sociales y prepagas'],
   whatsappDefaultMessage: 'Hola, quisiera consultar por un turno.',
-  mapUrl: 'https://maps.google.com/?q=[PENDIENTE] Dirección',
+  // Usar la URL de "Insertar un mapa" de Google Maps, no el enlace para compartir.
+  mapEmbedUrl: '',
+  privacyPolicyUrl: '',
 } as const
-
-export type WhatsAppParams = { phone: string; message: string }
-export function buildWhatsAppUrl({ phone, message }: WhatsAppParams) {
-  const normalized = phone.replace(/[^\d]/g, '')
-  return `https://wa.me/${normalized}?text=${encodeURIComponent(message)}`
-}
-
-export function track(_evento: string, _params?: Record<string, string>) {}
-
-export type SectionKey = 'about' | 'treatments' | 'professionals' | 'testimonials' | 'faq' | 'contact'

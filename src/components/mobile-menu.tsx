@@ -11,7 +11,7 @@ export function MobileMenu() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const desktop = window.matchMedia('(min-width: 768px)')
+    const desktop = window.matchMedia('(min-width: 1024px)')
     const closeOnDesktop = () => {
       if (desktop.matches) setOpen(false)
     }
@@ -21,7 +21,7 @@ export function MobileMenu() {
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Dialog.Trigger className="icon-button" aria-label="Abrir menú">
           <Menu aria-hidden="true" />
         </Dialog.Trigger>
@@ -33,7 +33,7 @@ export function MobileMenu() {
         >
           <div className="flex items-center justify-between gap-4">
             <Dialog.Title className="mb-0">
-              <Image src="/logo.png" alt="MYV Centro Odontológico" width={144} height={96} className="h-24 w-auto" />
+              <Image src="/logo-diente.png" alt="MYV Centro Odontológico" width={64} height={64} className="h-16 w-auto" />
             </Dialog.Title>
             <Dialog.Close className="icon-button" aria-label="Cerrar menú">
               <X aria-hidden="true" />

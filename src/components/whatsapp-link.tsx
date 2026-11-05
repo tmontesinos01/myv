@@ -28,5 +28,9 @@ export function WhatsAppLink({
     )
   }
 
-  return <a className={className} href={href} {...props}>{children}</a>
+  return (
+    <a className={className} href={href} {...props} target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
+  )
 }

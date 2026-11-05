@@ -30,7 +30,7 @@ export function ContactSection() {
           {socialLinks.length > 0 && (
             <div className="mt-7 flex gap-3">
               {socialLinks.map(({ mark, label, href }) => (
-                <a key={label} className="social-button" href={href ?? undefined} aria-label={label}>
+                <a key={label} className="social-button" href={href ?? undefined} aria-label={label} target="_blank" rel="noopener noreferrer">
                   <span aria-hidden="true">{mark}</span>
                 </a>
               ))}

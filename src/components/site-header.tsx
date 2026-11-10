@@ -1,8 +1,6 @@
 import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
 import { MobileMenu } from '@/src/components/mobile-menu'
 import { SiteNavigation } from '@/src/components/site-navigation'
-import { WhatsAppLink } from '@/src/components/whatsapp-link'
 
 export function SiteHeader() {
   return (
@@ -15,11 +13,6 @@ export function SiteHeader() {
           className="hidden items-center gap-5 whitespace-nowrap text-sm font-semibold text-[#556579] lg:flex xl:gap-6"
           aria-label="Navegación principal"
         />
-        <div className="hidden shrink-0 lg:block">
-          <WhatsAppLink className="button-primary">
-            WhatsApp <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
-          </WhatsAppLink>
-        </div>
         <MobileMenu />
       </div>
     </header>

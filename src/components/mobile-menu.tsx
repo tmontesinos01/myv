@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { Dialog } from '@base-ui/react/dialog'
 import { Menu, X } from 'lucide-react'
 import { SiteNavigation } from '@/src/components/site-navigation'
-import { WhatsAppLink } from '@/src/components/whatsapp-link'
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false)
@@ -44,9 +43,6 @@ export function MobileMenu() {
             aria-label="Menú móvil"
             onNavigate={() => setOpen(false)}
           />
-          <WhatsAppLink className="button-primary mt-auto" onClick={() => setOpen(false)}>
-            Pedí turno
-          </WhatsAppLink>
         </Dialog.Popup>
       </Dialog.Portal>
     </Dialog.Root>

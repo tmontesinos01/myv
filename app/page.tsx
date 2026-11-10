@@ -19,11 +19,9 @@ export default function Page() {
       <SiteHeader />
       <main id="contenido" tabIndex={-1}>
         <HeroSection />
-        <TrustBar />
         <AboutSection />
         <TreatmentsSection />
         <FeaturesSection />
-        <ProfessionalsSection />
         <TestimonialsSection />
         <FaqSection />
         <AppointmentSection />

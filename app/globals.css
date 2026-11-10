@@ -142,8 +142,122 @@ a:focus-visible, button:focus-visible {
 }
 
 .hero-section {
+  position: relative;
+  overflow: hidden;
   padding: 70px 0 76px;
-  background: linear-gradient(135deg,#fff 55%,#F2F7FC);
+  background: #E3F1FB;
+}
+
+.hero-carousel {
+  position: absolute;
+  z-index: 0;
+  inset: 0 16% 22% 35%;
+}
+
+.hero-track {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 0 0 24px 0;
+  background: #C9E3F6;
+  box-shadow: 10px 0 24px -6px rgba(18,59,120,.35);
+}
+
+.hero-peek {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 0 0 24px 0;
+  background: #C9E3F6;
+  box-shadow: 10px 0 24px -6px rgba(18,59,120,.3);
+}
+
+.hero-peek::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(18,59,120,.12);
+}
+
+.hero-peek-1 {
+  right: -26px;
+  bottom: 20px;
+}
+
+.hero-peek-2 {
+  right: -52px;
+  bottom: 40px;
+}
+
+.hero-peek-2::after {
+  background: rgba(18,59,120,.24);
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform: translateX(100%);
+}
+
+.hero-slide.is-active {
+  z-index: 2;
+  transform: translateX(0);
+  transition: transform .9s cubic-bezier(.65,0,.35,1);
+}
+
+.hero-slide.is-prev {
+  z-index: 1;
+  transform: translateX(-45%);
+  transition: transform .9s cubic-bezier(.65,0,.35,1);
+}
+
+.hero-divider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  fill: #fff;
+  filter: drop-shadow(6px 0 18px rgba(18,59,120,.18));
+  pointer-events: none;
+}
+
+@media (max-width:1023px) {
+  .hero-section {
+    display: flex;
+    flex-direction: column-reverse;
+    background: #fff;
+  }
+
+  .hero-carousel {
+    position: relative;
+    inset: auto;
+    width: min(100% - 40px, 1160px);
+    height: 320px;
+    margin: 40px auto 0;
+  }
+
+  .hero-track {
+    border-radius: 24px;
+  }
+
+  .hero-peek {
+    display: none;
+  }
+
+  .hero-divider {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide.is-active,
+  .hero-slide.is-prev {
+    transition: none;
+  }
 }
 
 .eyebrow {
@@ -189,6 +303,10 @@ h3 {
   line-height: 1.65;
 }
 
+.hero-highlight {
+  color: var(--blue);
+}
+
 .placeholder {
   display: flex;
   min-height: 180px;
@@ -210,10 +328,6 @@ h3 {
   padding: 8px 12px;
 }
 
-.hero-image {
-  min-height: 390px;
-  background: linear-gradient(145deg,#BFE1F5,#F6DCC1 75%);
-}
 
 .section {
   padding: 72px 0;
@@ -269,6 +383,53 @@ h3 {
   overflow: hidden;
   border-radius: 24px;
   background: linear-gradient(145deg,#E9F5FC,#F8EFE6);
+}
+
+.about-benefits {
+  margin-top: 24px;
+}
+
+.about-benefits-title {
+  display: inline-block;
+  margin-bottom: 16px;
+  border-radius: 99px;
+  background: linear-gradient(90deg,var(--navy),#169DB0);
+  color: white;
+  padding: 5px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.about-benefits ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.about-benefit-icon {
+  display: grid;
+  flex: 0 0 25px;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1.5px solid #267F90;
+  border-radius: 50%;
+  color: #176577;
+}
+
+.about-benefit-icon svg {
+  width: 17px;
+  height: 17px;
 }
 
 .treatment-card,.professional-card {
@@ -457,26 +618,32 @@ h3 {
 
 .sticky-whatsapp {
   position: fixed;
-  right: 16px;
-  bottom: calc(16px + env(safe-area-inset-bottom));
-  left: 16px;
+  right: calc(20px + env(safe-area-inset-right));
+  bottom: calc(20px + env(safe-area-inset-bottom));
   z-index: 30;
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 8px;
-  border-radius: 12px;
-  background: var(--blue);
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #168B50;
   color: white;
-  padding: 14px;
-  font-weight: 800;
-  box-shadow: 0 10px 25px rgba(21,94,239,.25);
+  box-shadow: 0 10px 28px rgba(12,92,50,.28);
+}
+
+.sticky-whatsapp:hover {
+  background: #106D3D;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.sticky-whatsapp svg {
+  width: 30px;
+  height: 30px;
 }
 
 @media (min-width:768px) {
-  .sticky-whatsapp {
-    display: none;
-  }
-
   .professional-card {
     display: grid;
     grid-template-columns: 180px 1fr;

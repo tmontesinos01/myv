@@ -3,9 +3,9 @@ import { WhatsAppLink } from '@/src/components/whatsapp-link'
 
 export function AppointmentSection() {
   return (
-    <section id="turno" className="cta-section">
+    <section className="cta-section">
       <div className="container flex flex-col items-start justify-between gap-7 md:flex-row md:items-center">
-        <div>
+        <div id="turno" className="section-anchor">
           <p className="eyebrow">PEDÍ TU TURNO</p>
           <h2>Tu próxima consulta empieza acá.</h2>
           <p>Escribinos para consultar disponibilidad. El pedido no confirma un turno.</p>

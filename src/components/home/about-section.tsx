@@ -20,9 +20,9 @@ const benefits: { text: string; icon: LucideIcon | typeof ToothIcon }[] = [
 
 export function AboutSection() {
   return (
-    <section id="nosotros" className="section about-section">
+    <section className="section about-section">
       <div className="container grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
-        <div>
+        <div id="nosotros" className="section-anchor">
           <SectionHeading eyebrow="SOBRE NOSOTROS" title="Tu sonrisa, nuestra historia.">
             <div className="about-image">
               <Image

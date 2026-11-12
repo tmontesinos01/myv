@@ -30,8 +30,8 @@ function TreatmentCard({ treatment }: { treatment: Treatment }) {
 
 export function TreatmentsSection() {
   return (
-    <section id="tratamientos" className="section section-surface">
-      <div className="container">
+    <section className="section section-surface">
+      <div id="tratamientos" className="container section-anchor">
         <SectionHeading
           eyebrow="TRATAMIENTOS"
           title="Soluciones para cuidar tu salud bucal."

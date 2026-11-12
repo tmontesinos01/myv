@@ -18,9 +18,9 @@ export function ContactSection() {
   ].filter((link) => link.href !== null)
 
   return (
-    <section id="contacto" className="section">
+    <section className="section">
       <div className="container grid gap-10 lg:grid-cols-2 lg:gap-20">
-        <div>
+        <div id="contacto" className="section-anchor">
           <SectionHeading eyebrow="CONTACTO Y UBICACIÓN" title="Estamos para ayudarte." />
           <div className="contact-list">
             {details.map(({ icon: Icon, label, value }) => (

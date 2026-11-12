@@ -5,8 +5,8 @@ export function TestimonialsSection() {
   if (testimonials.length === 0) return null
 
   return (
-    <section id="testimonios" className="section">
-      <div className="container">
+    <section className="section">
+      <div id="testimonios" className="container section-anchor">
         <SectionHeading eyebrow="TESTIMONIOS" title="Lo que dicen quienes nos eligen." />
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {testimonials.map((item) => (

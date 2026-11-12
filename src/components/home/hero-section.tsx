@@ -13,13 +13,13 @@ const heroSlides = [
 
 export function HeroSection() {
   return (
-    <section id="inicio" className="hero-section">
+    <section className="hero-section">
       <HeroCarousel slides={heroSlides} />
       <svg className="hero-divider" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0 0 L72 0 C55 2 46 18 47 45 C48 75 35 96 0 100 Z" />
       </svg>
       <div className="container relative z-10 grid items-center gap-10 lg:grid-cols-[1.02fr_.98fr] lg:gap-16">
-        <div className="max-w-2xl">
+        <div id="inicio" className="section-anchor max-w-2xl">
           <p className="eyebrow">MYV · ODONTOLOGÍA EN MERLO</p>
           <h1><span className="hero-highlight">Más de 25 años de trayectoria</span> en odontología.</h1>
           <p className="hero-copy">

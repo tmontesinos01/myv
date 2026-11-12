@@ -7,18 +7,21 @@ export function SectionTabs() {
   const [active, setActive] = useState<string>(sectionTabs[0].href)
 
   useEffect(() => {
+    const sections = new Map<Element, string>()
+    for (const { href } of sectionTabs) {
+      const section = document.getElementById(href.slice(1))?.closest('section')
+      if (section) sections.set(section, href)
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) setActive(`#${entry.target.id}`)
+          if (entry.isIntersecting) setActive(sections.get(entry.target) ?? sectionTabs[0].href)
         }
       },
       { rootMargin: '-45% 0px -55% 0px' },
     )
-    for (const { href } of sectionTabs) {
-      const section = document.getElementById(href.slice(1))
-      if (section) observer.observe(section)
-    }
+    for (const section of sections.keys()) observer.observe(section)
     return () => observer.disconnect()
   }, [])
 

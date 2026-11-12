@@ -26,7 +26,7 @@ export function HeroSection() {
             Conocé nuestros tratamientos, desde limpieza dental y restauraciones hasta implantes y ortodoncia. Escribinos para consultar por un turno.
           </p>
           <div className="hero-actions mt-8 flex flex-col gap-3 sm:flex-row">
-            <a className="button-secondary" href="#tratamientos">Ver tratamientos</a>
+            <a className="button-primary" href="#tratamientos">Ver tratamientos</a>
           </div>
         </div>
       </div>

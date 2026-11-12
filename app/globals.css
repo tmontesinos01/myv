@@ -875,7 +875,17 @@ h3 {
   }
 
   .footer-cta {
-    align-self: flex-end;
+    align-self: center;
+  }
+}
+
+@media (max-width:767px) {
+  .footer-brand {
+    margin-left: calc(var(--tabs-strip-width) * -1);
+  }
+
+  .footer-details {
+    margin-left: -12px;
   }
 }
 

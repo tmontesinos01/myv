@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Dialog } from '@base-ui/react/dialog'
-import { CalendarDays, ChevronRight, MapPin, Menu, MessageCircle, X } from 'lucide-react'
+import { ChevronRight, Clock3, MapPin, Menu, MessageCircle, Phone, X } from 'lucide-react'
 import { getHttpUrl } from '@/lib/contact'
 import { siteConfig } from '@/src/config/site.config'
 import { navigationLinks, sectionTabs } from '@/src/data/navigation'
@@ -44,7 +44,11 @@ export function MobileMenu() {
             </Dialog.Close>
           </div>
 
-          <nav className="mt-4 flex flex-col gap-2.5 px-5" aria-label="Menú móvil">
+          <div className="mobile-menu-brand">
+            <Image src="/logo.png" alt="MYV Centro Odontológico" width={192} height={128} className="mx-auto h-24 w-auto" />
+          </div>
+
+          <nav className="mt-5 flex flex-col gap-2.5 px-5" aria-label="Menú móvil">
             {navigationLinks.map(({ href, label }) => {
               const Icon = sectionTabs.find((tab) => tab.href === href)?.icon
               return (
@@ -64,20 +68,23 @@ export function MobileMenu() {
             </WhatsAppLink>
           </div>
 
-          <div className="mobile-menu-footer mt-auto">
-            <Image src="/logo.png" alt="MYV Centro Odontológico" width={192} height={128} className="mx-auto h-24 w-auto" />
-            <p className="mt-3 text-center">{siteConfig.description}</p>
-            <ul className="mt-4 flex flex-col gap-2.5">
-              <li><MapPin aria-hidden="true" /><span>{siteConfig.address}</span></li>
-              <li><CalendarDays aria-hidden="true" /><span>{siteConfig.hours}</span></li>
-            </ul>
+          <div className="mobile-menu-footer">
+            <p className="mobile-menu-tagline">Cuidamos tu sonrisa con una atención cercana y clara.</p>
+            <div className="mobile-menu-contact">
+              <a href="#contacto" onClick={close}><MapPin aria-hidden="true" /><span>{siteConfig.address}</span></a>
+              <a href={`tel:${siteConfig.phone.replace(/\D/g, '')}`}><Phone aria-hidden="true" /><span>{siteConfig.phone}</span></a>
+              <p><Clock3 aria-hidden="true" /><span>{siteConfig.hours}</span></p>
+            </div>
             {socialLinks.length > 0 && (
-              <div className="mt-4 flex justify-center gap-3">
-                {socialLinks.map(({ mark, label, href }) => (
-                  <a key={label} className="social-button bg-white" href={href ?? undefined} aria-label={label} target="_blank" rel="noopener noreferrer">
-                    <span aria-hidden="true">{mark}</span>
-                  </a>
-                ))}
+              <div className="mobile-menu-social">
+                <span>Seguinos</span>
+                <div className="flex gap-2">
+                  {socialLinks.map(({ mark, label, href }) => (
+                    <a key={label} className="footer-social" href={href ?? undefined} aria-label={label} target="_blank" rel="noopener noreferrer">
+                      <span aria-hidden="true">{mark}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
             )}
           </div>

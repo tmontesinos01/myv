@@ -2,7 +2,6 @@ import { AboutSection } from '@/src/components/home/about-section'
 import { AppointmentSection } from '@/src/components/home/appointment-section'
 import { ContactSection } from '@/src/components/home/contact-section'
 import { FaqSection } from '@/src/components/home/faq-section'
-import { FeaturesSection } from '@/src/components/home/features-section'
 import { HeroSection } from '@/src/components/home/hero-section'
 import { ProfessionalsSection } from '@/src/components/home/professionals-section'
 import { TestimonialsSection } from '@/src/components/home/testimonials-section'
@@ -23,7 +22,6 @@ export default function Page() {
         <HeroSection />
         <AboutSection />
         <TreatmentsSection />
-        <FeaturesSection />
         <TestimonialsSection />
         <FaqSection />
         <AppointmentSection />

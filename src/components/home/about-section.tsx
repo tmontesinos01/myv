@@ -22,16 +22,8 @@ export function AboutSection() {
   return (
     <section id="nosotros" className="section about-section">
       <div className="container grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
-
         <div>
-          <SectionHeading
-            eyebrow="SOBRE NOSOTROS"
-            title="Tu sonrisa, nuestra historia."
-            copy={[
-              'En Odontología MYV sabemos que una buena atención empieza por sentirte en confianza. Por eso, contamos con profesionales comprometidos con tu cuidado y un espacio preparado para recibir a personas de todas las edades.',
-              'También contamos con habilitación del Ministerio de Salud y laboratorio dental propio. Así respaldamos nuestro compromiso de brindarte una atención responsable y profesional.',
-            ]}
-          >
+          <SectionHeading eyebrow="SOBRE NOSOTROS" title="Tu sonrisa, nuestra historia.">
             <div className="about-image">
               <Image
                 src={aboutImage}
@@ -43,6 +35,12 @@ export function AboutSection() {
               />
             </div>
           </SectionHeading>
+        </div>
+        <div>
+          <div className="section-heading">
+            <p>En Odontología MYV sabemos que una buena atención empieza por sentirte en confianza. Por eso, contamos con profesionales comprometidos con tu cuidado y un espacio preparado para recibir a personas de todas las edades.</p>
+            <p>También contamos con habilitación del Ministerio de Salud y laboratorio dental propio. Así respaldamos nuestro compromiso de brindarte una atención responsable y profesional.</p>
+          </div>
           <div className="about-benefits">
             <h3 className="about-benefits-title">BENEFICIOS</h3>
             <ul>

@@ -17,7 +17,7 @@ export function MapReveal({ embedUrl }: { embedUrl: string }) {
         />
       ) : (
         <>
-          <MapPin className="text-[#155EEF]" aria-hidden="true" />
+          <MapPin className="text-[#32569e]" aria-hidden="true" />
           <p className="font-semibold text-[#172B45]">Mapa de ubicación</p>
           <p className="text-sm text-[#556579]">
             La ubicación estará disponible próximamente.

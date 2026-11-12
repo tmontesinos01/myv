@@ -54,7 +54,7 @@ a:focus-visible, button:focus-visible {
   top: 0;
   z-index: 20;
   background: #E3F1FB;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid #E3F1FB;
 }
 
 .brand-mark {
@@ -800,7 +800,7 @@ h3 {
   width: var(--tabs-strip-width);
   padding-left: env(safe-area-inset-left);
   background: #E3F1FB;
-  border-right: 1px solid var(--line);
+  border-right: 1px solid #E3F1FB;
 }
 
 .section-tabs::after {
@@ -810,7 +810,7 @@ h3 {
   left: calc(100% - 1px);
   width: 20px;
   height: 20px;
-  background: radial-gradient(circle at 100% 100%, transparent 18.5px, var(--line) 19px, var(--line) 19.75px, #E3F1FB 20.5px);
+  background: radial-gradient(circle at 100% 100%, transparent 18.5px, #E3F1FB 19px, #E3F1FB 19.75px, #E3F1FB 20.5px);
   pointer-events: none;
 }
 

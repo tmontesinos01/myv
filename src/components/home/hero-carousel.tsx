@@ -49,6 +49,9 @@ export function HeroCarousel({ slides, interval = 3000 }: { slides: readonly Sli
           )
         })}
       </div>
+      <svg className="hero-mobile-divider" viewBox="0 0 100 352" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 0 H100 V39 C93 54 92 66 78 72 C65 80 60 78 50 81 C34 83 26 95 19 108 C9 126 4 148 0 190 V352 Z" />
+      </svg>
     </div>
   )
 }

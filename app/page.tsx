@@ -8,6 +8,7 @@ import { ProfessionalsSection } from '@/src/components/home/professionals-sectio
 import { TestimonialsSection } from '@/src/components/home/testimonials-section'
 import { TreatmentsSection } from '@/src/components/home/treatments-section'
 import { TrustBar } from '@/src/components/home/trust-bar'
+import { SectionTabs } from '@/src/components/section-tabs'
 import { SiteFooter } from '@/src/components/site-footer'
 import { SiteHeader } from '@/src/components/site-header'
 import { StickyWhatsApp } from '@/src/components/sticky-whatsapp'
@@ -17,6 +18,7 @@ export default function Page() {
     <>
       <a className="skip-link" href="#contenido">Ir al contenido principal</a>
       <SiteHeader />
+      <SectionTabs />
       <main id="contenido" tabIndex={-1}>
         <HeroSection />
         <AboutSection />

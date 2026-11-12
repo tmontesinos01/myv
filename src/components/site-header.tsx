@@ -9,8 +9,13 @@ export function SiteHeader() {
         <a href="#inicio" className="site-logo block shrink-0" aria-label="MYV Centro Odontológico — Inicio">
           <Image src="/logo-diente.png" alt="MYV Centro Odontológico" width={68} height={68} className="h-14 w-auto lg:h-16" priority />
         </a>
+        <a href="#inicio" className="site-wordmark" aria-hidden="true" tabIndex={-1}>
+          <span className="site-wordmark-name">MYV</span>
+          <span className="site-wordmark-sub">CENTRO ODONTOLÓGICO</span>
+          <span className="site-wordmark-tagline">TU SONRISA, NUESTRA PRIORIDAD</span>
+        </a>
         <SiteNavigation
-          className="hidden items-center gap-5 whitespace-nowrap text-sm font-semibold text-[#556579] lg:flex xl:gap-6"
+          className="site-header-nav hidden items-center whitespace-nowrap lg:flex"
           aria-label="Navegación principal"
         />
         <MobileMenu />

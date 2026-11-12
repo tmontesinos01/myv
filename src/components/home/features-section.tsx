@@ -21,7 +21,7 @@ function FeatureCard({ feature: { icon: Icon, title, copy } }: { feature: Featur
 
 export function FeaturesSection() {
   return (
-    <section className="section">
+    <section id="elegirnos" className="section">
       <div className="container">
         <SectionHeading eyebrow="POR QUÉ ELEGIRNOS" title="Una atención que empieza por escucharte." />
         <div className="mt-10 grid gap-8 md:grid-cols-3">

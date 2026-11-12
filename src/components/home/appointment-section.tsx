@@ -3,7 +3,7 @@ import { WhatsAppLink } from '@/src/components/whatsapp-link'
 
 export function AppointmentSection() {
   return (
-    <section className="cta-section">
+    <section id="turno" className="cta-section">
       <div className="container flex flex-col items-start justify-between gap-7 md:flex-row md:items-center">
         <div>
           <p className="eyebrow">PEDÍ TU TURNO</p>

@@ -25,7 +25,7 @@ export function HeroSection() {
           <p className="hero-copy">
             Conocé nuestros tratamientos, desde limpieza dental y restauraciones hasta implantes y ortodoncia. Escribinos para consultar por un turno.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="hero-actions mt-8 flex flex-col gap-3 sm:flex-row">
             <a className="button-secondary" href="#tratamientos">Ver tratamientos</a>
           </div>
         </div>

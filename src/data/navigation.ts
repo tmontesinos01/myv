@@ -1,4 +1,4 @@
-import { CalendarCheck, CircleQuestionMark, HeartHandshake, House, MapPin, Quote, ToothbrushSparkles, Users, type LucideIcon } from 'lucide-react'
+import { CalendarCheck, CircleQuestionMark, HeartHandshake, House, MapPin, Quote, Sparkles, Users, type LucideIcon } from 'lucide-react'
 import { testimonials } from '@/src/data/content'
 
 export type NavigationLink = { href: `#${string}`; label: string }
@@ -14,7 +14,7 @@ export const navigationLinks: NavigationLink[] = [
 export const sectionTabs: SectionTab[] = [
   { href: '#inicio', label: 'Inicio', icon: House },
   { href: '#nosotros', label: 'Nosotros', icon: Users },
-  { href: '#tratamientos', label: 'Tratamientos', icon: ToothbrushSparkles },
+  { href: '#tratamientos', label: 'Tratamientos', icon: Sparkles },
   { href: '#elegirnos', label: 'Por qué elegirnos', icon: HeartHandshake },
   ...(testimonials.length > 0 ? [{ href: '#testimonios', label: 'Testimonios', icon: Quote } satisfies SectionTab] : []),
   { href: '#preguntas', label: 'Preguntas frecuentes', icon: CircleQuestionMark },

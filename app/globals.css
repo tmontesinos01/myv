@@ -1095,23 +1095,10 @@ h3 {
   box-shadow: 0 14px 34px rgba(18,59,120,.06);
 }
 
-.mobile-menu-tagline {
-  max-width: 240px;
-  margin: 0 auto;
-  color: var(--navy);
-  font-size: 14px;
-  font-weight: 650;
-  line-height: 1.45;
-  text-align: center;
-}
-
 .mobile-menu-contact {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
 }
 
 .mobile-menu-contact a, .mobile-menu-contact p {

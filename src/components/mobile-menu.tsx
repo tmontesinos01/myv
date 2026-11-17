@@ -61,7 +61,7 @@ export function MobileMenu() {
             })}
           </nav>
 
-          <div className="mt-5 px-5">
+          <div className="mt-5 mb-5 px-5">
             <WhatsAppLink className="button-primary w-full" onClick={close}>
               <MessageCircle aria-hidden="true" className="h-5 w-5" />
               Pedí tu turno
@@ -69,7 +69,6 @@ export function MobileMenu() {
           </div>
 
           <div className="mobile-menu-footer">
-            <p className="mobile-menu-tagline">Cuidamos tu sonrisa con una atención cercana y clara.</p>
             <div className="mobile-menu-contact">
               <a href="#contacto" onClick={close}><MapPin aria-hidden="true" /><span>{siteConfig.address}</span></a>
               <a href={`tel:${siteConfig.phone.replace(/\D/g, '')}`}><Phone aria-hidden="true" /><span>{siteConfig.phone}</span></a>

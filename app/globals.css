@@ -21,6 +21,8 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  background: var(--navigation-background);
 }
 
 main .section-anchor {
@@ -29,6 +31,7 @@ main .section-anchor {
 
 body {
   margin: 0;
+  overscroll-behavior-y: none;
   background: #fff;
   color: var(--ink);
   font-family: var(--font-manrope), Arial, sans-serif;

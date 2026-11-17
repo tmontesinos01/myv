@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Manrope } from 'next/font/google'
+import { PageLoader } from '@/src/components/page-loader'
 import { siteConfig } from '@/src/config/site.config'
 import './globals.css'
 
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es">
       <body className={`${manrope.variable} antialiased`}>
+        <PageLoader />
         {children}
         {!siteConfig.name.includes('[PENDIENTE]') && (
           <script

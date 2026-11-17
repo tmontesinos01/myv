@@ -10,7 +10,7 @@ export function AppointmentSection() {
           <h2>Tu próxima consulta empieza acá.</h2>
           <p>Escribinos para consultar disponibilidad. El pedido no confirma un turno.</p>
         </div>
-        <WhatsAppLink className="button-light">
+        <WhatsAppLink className="button-light self-end md:self-auto">
           Hablar por WhatsApp <MessageCircle data-icon="inline-end" aria-hidden="true" />
         </WhatsAppLink>
       </div>
